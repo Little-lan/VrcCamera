@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    
+    <AssemblyName>VrcCamera</AssemblyName>
+    
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    
+    <ApplicationIcon>b_f52429ee95e1e501f97afa6d1f9ebb30.ico</ApplicationIcon>
+    
+    <SelfContained>false</SelfContained>
+    
+    <PublishSingleFile>true</PublishSingleFile>
+    
+    <EnableCompressionInSingleFile>false</EnableCompressionInSingleFile>
+    
+    <DebugType>none</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+    
+    <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Rug.Osc" Version="1.2.5">
+      <NoWarn>NU1701</NoWarn>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="b_f52429ee95e1e501f97afa6d1f9ebb30.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+</Project>

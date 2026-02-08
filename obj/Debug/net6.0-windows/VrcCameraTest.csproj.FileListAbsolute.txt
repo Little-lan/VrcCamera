@@ -1,0 +1,5 @@
+E:\c#程序\VrcCameraTest\obj\Debug\net6.0-windows\VrcCameraTest.csproj.AssemblyReference.cache
+E:\c#程序\VrcCameraTest\obj\Debug\net6.0-windows\VrcCameraTest.GeneratedMSBuildEditorConfig.editorconfig
+E:\c#程序\VrcCameraTest\obj\Debug\net6.0-windows\VrcCameraTest.AssemblyInfoInputs.cache
+E:\c#程序\VrcCameraTest\obj\Debug\net6.0-windows\VrcCameraTest.AssemblyInfo.cs
+E:\c#程序\VrcCameraTest\obj\Debug\net6.0-windows\VrcCameraTest.csproj.CoreCompileInputs.cache

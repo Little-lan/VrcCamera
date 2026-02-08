@@ -1,0 +1,16 @@
+E:\c#程序\VrcCameraTest\bin\Release\net8.0-windows\win-x64\b_f52429ee95e1e501f97afa6d1f9ebb30.ico
+E:\c#程序\VrcCameraTest\bin\Release\net8.0-windows\win-x64\Rug.Osc.dll
+E:\c#程序\VrcCameraTest\obj\Release\net8.0-windows\win-x64\VrcCameraTest.csproj.AssemblyReference.cache
+E:\c#程序\VrcCameraTest\obj\Release\net8.0-windows\win-x64\VrcCameraTest.GeneratedMSBuildEditorConfig.editorconfig
+E:\c#程序\VrcCameraTest\obj\Release\net8.0-windows\win-x64\VrcCameraTest.AssemblyInfoInputs.cache
+E:\c#程序\VrcCameraTest\obj\Release\net8.0-windows\win-x64\VrcCameraTest.AssemblyInfo.cs
+E:\c#程序\VrcCameraTest\obj\Release\net8.0-windows\win-x64\VrcCameraTest.csproj.CoreCompileInputs.cache
+E:\c#程序\VrcCameraTest\obj\Release\net8.0-windows\win-x64\VrcCamer.F60B6CD3.Up2Date
+E:\c#程序\VrcCameraTest\obj\Release\net8.0-windows\win-x64\VrcCameraTest.genruntimeconfig.cache
+E:\c#程序\VrcCameraTest\bin\Release\net8.0-windows\win-x64\VrcCamera.exe
+E:\c#程序\VrcCameraTest\bin\Release\net8.0-windows\win-x64\VrcCamera.deps.json
+E:\c#程序\VrcCameraTest\bin\Release\net8.0-windows\win-x64\VrcCamera.runtimeconfig.json
+E:\c#程序\VrcCameraTest\bin\Release\net8.0-windows\win-x64\VrcCamera.dll
+E:\c#程序\VrcCameraTest\obj\Release\net8.0-windows\win-x64\VrcCamera.dll
+E:\c#程序\VrcCameraTest\obj\Release\net8.0-windows\win-x64\refint\VrcCamera.dll
+E:\c#程序\VrcCameraTest\obj\Release\net8.0-windows\win-x64\ref\VrcCamera.dll

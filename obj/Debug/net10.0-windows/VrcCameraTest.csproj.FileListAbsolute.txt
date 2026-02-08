@@ -1,0 +1,17 @@
+E:\c#程序\VrcCameraTest\bin\Debug\net10.0-windows\VrcCameraTest.exe
+E:\c#程序\VrcCameraTest\bin\Debug\net10.0-windows\VrcCameraTest.deps.json
+E:\c#程序\VrcCameraTest\bin\Debug\net10.0-windows\VrcCameraTest.runtimeconfig.json
+E:\c#程序\VrcCameraTest\bin\Debug\net10.0-windows\VrcCameraTest.dll
+E:\c#程序\VrcCameraTest\bin\Debug\net10.0-windows\VrcCameraTest.pdb
+E:\c#程序\VrcCameraTest\bin\Debug\net10.0-windows\Rug.Osc.dll
+E:\c#程序\VrcCameraTest\obj\Debug\net10.0-windows\VrcCameraTest.csproj.AssemblyReference.cache
+E:\c#程序\VrcCameraTest\obj\Debug\net10.0-windows\VrcCameraTest.GeneratedMSBuildEditorConfig.editorconfig
+E:\c#程序\VrcCameraTest\obj\Debug\net10.0-windows\VrcCameraTest.AssemblyInfoInputs.cache
+E:\c#程序\VrcCameraTest\obj\Debug\net10.0-windows\VrcCameraTest.AssemblyInfo.cs
+E:\c#程序\VrcCameraTest\obj\Debug\net10.0-windows\VrcCameraTest.csproj.CoreCompileInputs.cache
+E:\c#程序\VrcCameraTest\obj\Debug\net10.0-windows\VrcCamer.F60B6CD3.Up2Date
+E:\c#程序\VrcCameraTest\obj\Debug\net10.0-windows\VrcCameraTest.dll
+E:\c#程序\VrcCameraTest\obj\Debug\net10.0-windows\refint\VrcCameraTest.dll
+E:\c#程序\VrcCameraTest\obj\Debug\net10.0-windows\VrcCameraTest.pdb
+E:\c#程序\VrcCameraTest\obj\Debug\net10.0-windows\VrcCameraTest.genruntimeconfig.cache
+E:\c#程序\VrcCameraTest\obj\Debug\net10.0-windows\ref\VrcCameraTest.dll

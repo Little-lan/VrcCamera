@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "DSGP51hyT5o=",
+  "success": true,
+  "projectFilePath": "E:\\c#程序\\VrcCameraTest\\VrcCameraTest.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\xiaol\\.nuget\\packages\\microsoft.net.illink.tasks\\8.0.23\\microsoft.net.illink.tasks.8.0.23.nupkg.sha512",
+    "C:\\Users\\xiaol\\.nuget\\packages\\rug.osc\\1.2.5\\rug.osc.1.2.5.nupkg.sha512",
+    "C:\\Users\\xiaol\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.23\\microsoft.netcore.app.ref.8.0.23.nupkg.sha512",
+    "C:\\Users\\xiaol\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.23\\microsoft.windowsdesktop.app.ref.8.0.23.nupkg.sha512",
+    "C:\\Users\\xiaol\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.23\\microsoft.aspnetcore.app.ref.8.0.23.nupkg.sha512",
+    "C:\\Users\\xiaol\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\8.0.23\\microsoft.netcore.app.host.win-x64.8.0.23.nupkg.sha512"
+  ],
+  "logs": []
+}
