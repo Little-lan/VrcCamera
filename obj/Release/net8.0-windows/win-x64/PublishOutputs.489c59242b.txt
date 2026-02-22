@@ -1,1 +1,0 @@
-E:\c#程序\VrcCameraTest\bin\Release\net8.0-windows\win-x64\publish\VrcCamera.exe
