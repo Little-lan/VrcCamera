@@ -28,6 +28,8 @@
     <PackageReference Include="Rug.Osc" Version="1.2.5">
       <NoWarn>NU1701</NoWarn>
     </PackageReference>
+    <PackageReference Include="SharpDX.DirectInput" Version="4.2.0" />
+    <PackageReference Include="SharpDX.XInput" Version="4.2.0" />
   </ItemGroup>
 
   <ItemGroup>

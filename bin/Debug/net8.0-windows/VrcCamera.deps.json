@@ -1,0 +1,94 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "VrcCamera/1.0.0": {
+        "dependencies": {
+          "Rug.Osc": "1.2.5",
+          "SharpDX.DirectInput": "4.2.0",
+          "SharpDX.XInput": "4.2.0"
+        },
+        "runtime": {
+          "VrcCamera.dll": {}
+        }
+      },
+      "Rug.Osc/1.2.5": {
+        "runtime": {
+          "lib/Rug.Osc.dll": {
+            "assemblyVersion": "1.2.5.17694",
+            "fileVersion": "1.2.5.0"
+          }
+        }
+      },
+      "SharpDX/4.2.0": {
+        "runtime": {
+          "lib/netstandard1.1/SharpDX.dll": {
+            "assemblyVersion": "4.2.0.0",
+            "fileVersion": "4.2.0.0"
+          }
+        }
+      },
+      "SharpDX.DirectInput/4.2.0": {
+        "dependencies": {
+          "SharpDX": "4.2.0"
+        },
+        "runtime": {
+          "lib/netstandard1.3/SharpDX.DirectInput.dll": {
+            "assemblyVersion": "4.2.0.0",
+            "fileVersion": "4.2.0.0"
+          }
+        }
+      },
+      "SharpDX.XInput/4.2.0": {
+        "dependencies": {
+          "SharpDX": "4.2.0"
+        },
+        "runtime": {
+          "lib/netstandard1.1/SharpDX.XInput.dll": {
+            "assemblyVersion": "4.2.0.0",
+            "fileVersion": "4.2.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "VrcCamera/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Rug.Osc/1.2.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-nbujIPTk+QO90qv+U9E5reGFEBDpu8c4I65dkVxR4/xBL+WXUzUjvfBm5mEmtRRqFeoqfK7VLje+FEdz/FmoTg==",
+      "path": "rug.osc/1.2.5",
+      "hashPath": "rug.osc.1.2.5.nupkg.sha512"
+    },
+    "SharpDX/4.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-3pv0LFMvfK/dv1qISJnn8xBeeT6R/FRvr0EV4KI2DGsL84Qlv6P7isWqxGyU0LCwlSVCJN3jgHJ4Bl0KI2PJww==",
+      "path": "sharpdx/4.2.0",
+      "hashPath": "sharpdx.4.2.0.nupkg.sha512"
+    },
+    "SharpDX.DirectInput/4.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-is6Lm9zULyeTbUaLXktF+MwzmUYE8jofhA+6qgR1HBIyRJ/c2rZbeG1VvvGf4w6ktfq/q3AvUWTNzwgdU/+XOg==",
+      "path": "sharpdx.directinput/4.2.0",
+      "hashPath": "sharpdx.directinput.4.2.0.nupkg.sha512"
+    },
+    "SharpDX.XInput/4.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-mH3soea+aVUaTuFrkwx+zohklDvCczcgtuTiZJbOCyS5GZ/F9se4BsRJ86xTA9baf0drXYbZQj152PN7lnjiwg==",
+      "path": "sharpdx.xinput/4.2.0",
+      "hashPath": "sharpdx.xinput.4.2.0.nupkg.sha512"
+    }
+  }
+}

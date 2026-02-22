@@ -14,3 +14,6 @@ E:\c#程序\VrcCameraTest\bin\Release\net8.0-windows\win-x64\VrcCamera.dll
 E:\c#程序\VrcCameraTest\obj\Release\net8.0-windows\win-x64\VrcCamera.dll
 E:\c#程序\VrcCameraTest\obj\Release\net8.0-windows\win-x64\refint\VrcCamera.dll
 E:\c#程序\VrcCameraTest\obj\Release\net8.0-windows\win-x64\ref\VrcCamera.dll
+E:\c#程序\VrcCameraTest\bin\Release\net8.0-windows\win-x64\SharpDX.dll
+E:\c#程序\VrcCameraTest\bin\Release\net8.0-windows\win-x64\SharpDX.XInput.dll
+E:\c#程序\VrcCameraTest\bin\Release\net8.0-windows\win-x64\SharpDX.DirectInput.dll

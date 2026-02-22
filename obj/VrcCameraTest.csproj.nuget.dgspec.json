@@ -56,6 +56,14 @@
               "noWarn": [
                 "NU1701"
               ]
+            },
+            "SharpDX.DirectInput": {
+              "target": "Package",
+              "version": "[4.2.0, )"
+            },
+            "SharpDX.XInput": {
+              "target": "Package",
+              "version": "[4.2.0, )"
             }
           },
           "imports": [
