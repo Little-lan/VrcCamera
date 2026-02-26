@@ -132,6 +132,7 @@ namespace VrcCameraDebugger
         private string connectedProtocol = ""; // "XInput" 或 "DInput"
         private int gamepadCheckTimer = 0;
         private string lastGamepadUIStatus = ""; 
+        private bool isScanningGamepad = false; // 防止后台线程重复扫描的锁
 
         // UI 基础控件
         private Label lblAddress, lblStatus, lblPosInfo, lblRotInfo, lblGamepadStatus;
@@ -303,14 +304,22 @@ namespace VrcCameraDebugger
             if (joyMove.IsUserInteracting) { inputX = joyMove.ValueX; inputY = -joyMove.ValueY; hasAnyInput = true; }
             if (joyLook.IsUserInteracting) { lookX = joyLook.ValueX; lookY = joyLook.ValueY; hasAnyInput = true; }
 
-            // B. 尝试寻找/读取手柄
+            // B. 尝试寻找/读取手柄 (包含异步智能暂停防卡顿机制)
             if (!isGamepadConnected)
             {
-                gamepadCheckTimer++;
-                if (gamepadCheckTimer > 60) // 大约每秒扫描一次硬件
+                if (hasAnyInput)
                 {
-                    TryConnectGamepad();
+                    // 如果正在用鼠标操作 UI 摇杆，直接重置计时器并跳过硬件扫描，保证绝对流畅
                     gamepadCheckTimer = 0;
+                }
+                else
+                {
+                    gamepadCheckTimer++;
+                    if (gamepadCheckTimer > 60 && !isScanningGamepad) 
+                    {
+                        TryConnectGamepadAsync(); // 异步抛出后台扫描，不卡主线程
+                        gamepadCheckTimer = 0;
+                    }
                 }
             }
             else
@@ -372,41 +381,63 @@ namespace VrcCameraDebugger
         }
 
         // =====================================
-        // 双协议智能热插拔检测逻辑
+        // 双协议智能热插拔检测逻辑 (异步后台版)
         // =====================================
-        private void TryConnectGamepad()
+        private async void TryConnectGamepadAsync()
         {
-            // 1. 优先尝试 XInput (Xbox标准协议)
-            Controller[] xControllers = { new Controller(UserIndex.One), new Controller(UserIndex.Two), new Controller(UserIndex.Three), new Controller(UserIndex.Four) };
-            foreach (var c in xControllers)
+            isScanningGamepad = true;
+            
+            await Task.Run(() => 
             {
-                if (c.IsConnected)
+                try
                 {
-                    xboxController = c;
-                    connectedProtocol = "XInput";
-                    isGamepadConnected = true;
-                    previousXInputState = xboxController.GetState();
-                    return;
+                    // 1. 优先尝试 XInput (Xbox标准协议)
+                    Controller? foundXbox = null;
+                    Controller[] xControllers = { new Controller(UserIndex.One), new Controller(UserIndex.Two), new Controller(UserIndex.Three), new Controller(UserIndex.Four) };
+                    foreach (var c in xControllers) {
+                        if (c.IsConnected) { foundXbox = c; break; }
+                    }
+
+                    if (foundXbox != null)
+                    {
+                        if (this.IsHandleCreated && !this.Disposing) {
+                            this.Invoke(new Action(() => {
+                                xboxController = foundXbox;
+                                connectedProtocol = "XInput";
+                                isGamepadConnected = true;
+                                previousXInputState = xboxController.GetState();
+                            }));
+                        }
+                        return;
+                    }
+
+                    // 2. DirectInput 设备枚举 (此步骤极耗时，放进后台杜绝卡顿)
+                    var dInputDevices = directInput.GetDevices(SharpDX.DirectInput.DeviceType.Gamepad, DeviceEnumerationFlags.AllDevices);
+                    if (dInputDevices.Count == 0) dInputDevices = directInput.GetDevices(SharpDX.DirectInput.DeviceType.Joystick, DeviceEnumerationFlags.AllDevices);
+
+                    if (dInputDevices.Count > 0)
+                    {
+                        var guid = dInputDevices[0].InstanceGuid;
+                        if (this.IsHandleCreated && !this.Disposing) {
+                            this.Invoke(new Action(() => {
+                                try {
+                                    dInputJoystick = new Joystick(directInput, guid);
+                                    dInputJoystick.Properties.BufferSize = 128;
+                                    dInputJoystick.Acquire();
+                                    dInputJoystick.Poll();
+                                    previousDInputState = dInputJoystick.GetCurrentState();
+                                    connectedProtocol = "DInput";
+                                    isGamepadConnected = true;
+                                } 
+                                catch { DisconnectGamepad(); }
+                            }));
+                        }
+                    }
                 }
-            }
+                catch { /* 忽略底层扫描中途可能抛出的微小异常 */ }
+            });
 
-            // 2. 如果没有XInput，尝试 DirectInput (通用/安卓/Switch协议)
-            var dInputDevices = directInput.GetDevices(SharpDX.DirectInput.DeviceType.Gamepad, DeviceEnumerationFlags.AllDevices);
-            if (dInputDevices.Count == 0) dInputDevices = directInput.GetDevices(SharpDX.DirectInput.DeviceType.Joystick, DeviceEnumerationFlags.AllDevices);
-
-            if (dInputDevices.Count > 0)
-            {
-                try {
-                    dInputJoystick = new Joystick(directInput, dInputDevices[0].InstanceGuid);
-                    dInputJoystick.Properties.BufferSize = 128;
-                    dInputJoystick.Acquire();
-                    dInputJoystick.Poll();
-                    previousDInputState = dInputJoystick.GetCurrentState();
-                    connectedProtocol = "DInput";
-                    isGamepadConnected = true;
-                } 
-                catch { DisconnectGamepad(); }
-            }
+            isScanningGamepad = false;
         }
 
         private void DisconnectGamepad()
@@ -462,7 +493,6 @@ namespace VrcCameraDebugger
                 dInputJoystick.Poll();
                 var state = dInputJoystick.GetCurrentState();
 
-                // D-Input 的摇杆值通常是 0 到 65535。中心值是 32767。
                 float NormalizeAxis(int value) 
                 {
                     float normalized = (value - 32767) / 32767.0f;
